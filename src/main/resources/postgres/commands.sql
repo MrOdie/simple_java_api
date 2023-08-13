@@ -30,8 +30,10 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- INSERT INTO table_name(column1, column2, …) VALUES (value1, value2, …);
 
+-- sodonn, cathy, maggie
 INSERT INTO "user" (username, password, email, active, created_on, last_login) VALUES ('sodonn', '12345', 'test@gmail.com', true, CURRENT_TIMESTAMP, now());
-INSERT INTO "user" (username, password, email, active, created_on, last_login) VALUES ('sodonn', '12345', 'test@gmail.com', true, CURRENT_TIMESTAMP, now());
+INSERT INTO "user" (username, password, email, active, created_on, last_login) VALUES ('maggie', '12345', 'maggie@gmail.com', true, CURRENT_TIMESTAMP, now());
+INSERT INTO "user" (username, password, email, active, created_on, last_login) VALUES ('cathy', '12345', 'cathy@gmail.com', true, CURRENT_TIMESTAMP, now());
 
 CREATE TABLE "role"
 (
@@ -83,3 +85,26 @@ ALTER TABLE "posts" ADD CONSTRAINT unique_title UNIQUE (title);
 ALTER TABLE "user" ADD COLUMN active BOOLEAN DEFAULT true;
 
 DROP TABLE public.[name of table];
+
+-- Helpful psql commands:
+
+-- Connect to DB
+\c
+
+-- Display Users
+\du
+
+-- info about connection
+\conninfo
+
+-- change password
+\password
+
+-- list tables
+\dt
+
+-- describe table
+\d [TABLE_NAME]
+
+-- check expanded display
+\x

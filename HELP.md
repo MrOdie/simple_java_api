@@ -17,7 +17,11 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
 
-###
-Helpful commands: 
+### Helpful commands: 
 -  `mvn clean install`
 - `./mvnw spring-boot:run --quiet`
+
+Build the jar:
+- `./mvnw clean package`
+- `java -jar target/gs-rest-service-0.1.0.jar`
+If you use Maven, you can run the application by using ./mvnw spring-boot:run. Alternatively, you can build the JAR file with ./mvnw clean package and then run the JAR file, as follows:
