@@ -26,3 +26,5 @@ replay_pid*
 # Additionally hidden directories
 target/
 *.hprof
+.idea/
+.vscode/

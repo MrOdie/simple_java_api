@@ -11,13 +11,6 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
-// id uuid DEFAULT uuid_generate_v4 (),
-// username VARCHAR(50) UNIQUE NOT NULL,
-// password VARCHAR(50) NOT NULL,
-// email VARCHAR(50) UNIQUE NOT NULL,
-// active BOOLEAN,
-// created_on TIMESTAMP NOT NULL,
-// last_login TIMESTAMP NOT NULL
 @Entity
 @Table(name="USER", schema="public")
 public class User {
@@ -45,17 +38,18 @@ public class User {
     @Temporal(TemporalType.DATE)
     private LocalDate lastLogin;
 
-
-    
     public User(Long id, String username, String password, String email, Boolean active, LocalDate createdOn,
             LocalDate lastLogin) {
-        this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
         this.active = active;
         this.createdOn = createdOn;
         this.lastLogin = lastLogin;
+    }
+
+    public User() {
+
     }
 
     @Override
