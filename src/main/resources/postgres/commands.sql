@@ -8,7 +8,7 @@ CREATE TABLE "user"
     email VARCHAR(50) UNIQUE NOT NULL,
     active BOOLEAN,
     created_on TIMESTAMP NOT NULL,
-    last_login TIMESTAMP NOT NULL
+    last_modified TIMESTAMP NOT NULL
 );
 
 -- uuid
@@ -31,9 +31,9 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- INSERT INTO table_name(column1, column2, …) VALUES (value1, value2, …);
 
 -- sodonn, cathy, maggie
-INSERT INTO "user" (username, password, email, active, created_on, last_login) VALUES ('sodonn', '12345', 'test@gmail.com', true, CURRENT_TIMESTAMP, now());
-INSERT INTO "user" (username, password, email, active, created_on, last_login) VALUES ('maggie', '12345', 'maggie@gmail.com', true, CURRENT_TIMESTAMP, now());
-INSERT INTO "user" (username, password, email, active, created_on, last_login) VALUES ('cathy', '12345', 'cathy@gmail.com', true, CURRENT_TIMESTAMP, now());
+INSERT INTO "user" (username, password, email, active, created_on, last_modified) VALUES ('sodonn', '12345', 'test@gmail.com', true, CURRENT_TIMESTAMP, now());
+INSERT INTO "user" (username, password, email, active, created_on, last_modified) VALUES ('maggie', '12345', 'maggie@gmail.com', true, CURRENT_TIMESTAMP, now());
+INSERT INTO "user" (username, password, email, active, created_on, last_modified) VALUES ('cathy', '12345', 'cathy@gmail.com', true, CURRENT_TIMESTAMP, now());
 
 CREATE TABLE "role"
 (

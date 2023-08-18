@@ -1,15 +1,16 @@
 package com.odie.api.user;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class UserController {
 
+    @Autowired
+    private UserService userService;
     private final UserRepository repository;
 
     UserController(UserRepository repository) {
@@ -24,7 +25,12 @@ public class UserController {
     @GetMapping("/user/{id}")
     User one(@PathVariable Long id) {
 
-        User user = repository.findById(id).orElseThrow(() -> new RuntimeException("No such User."));
-        return user;
+        return repository.findById(id).orElseThrow(() -> new RuntimeException("No such User."));
+    }
+
+    @PostMapping("/users")
+    @ResponseStatus(HttpStatus.CREATED)
+    Long createUser(@RequestBody User user) {
+        return userService.createUser(user);
     }
 }
