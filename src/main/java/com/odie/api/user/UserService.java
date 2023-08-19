@@ -23,16 +23,19 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public User updateUser(Long id, User user) {
-        if (repository.findById(user.getId()).isPresent()) {
+        if (repository.findById(id).isPresent()) {
             User existingUser = repository.findById(id).get();
-            user.setActive(user.getActive());
-            user.setEmail(user.getEmail());
-            user.setPassword(user.getPassword());
-            user.setUsername(user.getUsername());
 
+            existingUser.setActive(user.getActive());
+            existingUser.setEmail(user.getEmail());
+            existingUser.setPassword(user.getPassword());
+            existingUser.setUsername(user.getUsername());
+
+            System.out.println("existingUser: " + existingUser);
             User updatedUser = repository.save(existingUser);
+            System.out.println("UpdatedUser: " + updatedUser);
 
-            return new User(updatedUser.getUsername(), updatedUser.getEmail(), updatedUser.getActive());
+            return updatedUser;
         }
 
         return null;

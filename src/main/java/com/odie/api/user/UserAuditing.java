@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @Configuration
 @EnableJpaAuditing
 public class UserAuditing {
-    // Nothing specific to add here, just enabling auditing
+    // Enabling auditing
 }

@@ -40,12 +40,6 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastModified;
 
-    public User(String username, String email, Boolean active) {
-        this.username = username;
-        this.email = email;
-        this.active = active;
-    }
-
     public User() {
 
     }
